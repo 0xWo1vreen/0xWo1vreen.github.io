@@ -348,7 +348,6 @@ body{background-color:var(--bg);background-attachment:fixed;background-image:rad
 .chinst button.go2{background:none;border:1px solid var(--line);color:var(--mute);font-weight:700;padding:8px 16px;border-radius:10px}
 .chinst button.go2:hover{border-color:var(--acc);color:var(--acc)}
 
-.sbtn{border:1px solid var(--line);background:var(--p);border-radius:10px;width:38px;height:38px;display:grid;place-items:center;font-size:15px;cursor:pointer;margin-inline-end:6px}
 .search-ov{display:none;position:fixed;inset:0;z-index:200;background:rgba(2,4,12,.55);backdrop-filter:blur(3px);align-items:flex-start;justify-content:center;padding-top:12vh}
 .search-box{width:min(560px,92vw);background:var(--solid);border:1px solid var(--line);border-radius:16px;box-shadow:0 30px 60px -20px rgba(0,0,0,.5);overflow:hidden}
 .search-box input{width:100%;padding:16px 18px;border:0;background:none;color:var(--ink);font-size:16px;border-bottom:1px solid var(--line);outline:0}
@@ -419,7 +418,7 @@ body{background-color:var(--bg);background-attachment:fixed;background-image:rad
 <div class="row" style="margin-top:8px;max-width:340px"><div class="pg"><i id="pgb"></i></div><small id="pgt" class="role"></small></div></div>
 </header>
 <div class="bar"><div class="wrap">
-<button id="searchBtn" class="sbtn" aria-label="بحث" title="بحث (Ctrl+K)">🔍</button><button id="burger" aria-label="قائمة الأقسام" aria-expanded="false"><i></i><i></i><i></i></button>
+<button id="burger" aria-label="قائمة الأقسام" aria-expanded="false"><i></i><i></i><i></i></button>
 <span id="cur">الرئيسية</span>
 <button id="home" style="margin-inline-start:auto">الرئيسية</button><div class="tg" role="group" aria-label="الوضع"><button id="tdark" aria-label="الوضع الليلي" title="الوضع الليلي"></button><button id="tlight" aria-label="الوضع النهاري" title="الوضع النهاري"></button></div>
 <div id="menu"></div>
@@ -1045,7 +1044,6 @@ else if(e.key==='ArrowDown'){e.preventDefault();SEARCH_SEL=Math.min(items.length
 else if(e.key==='ArrowUp'){e.preventDefault();SEARCH_SEL=Math.max(0,SEARCH_SEL-1);highlightSel(items)}
 else if(e.key==='Enter'){e.preventDefault();if(items[SEARCH_SEL])items[SEARCH_SEL].click()}}}
 document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&(e.key==='k'||e.key==='K')){e.preventDefault();openSearchModal()}});
-if($('#searchBtn'))$('#searchBtn').onclick=openSearchModal;
 
 /* ===================== CTF Challenge: Web Requests Fundamentals — Lab حر + فلاج Dynamic ===================== */
 const CTFWEB={
@@ -1188,7 +1186,7 @@ btn.onclick=go;inp.onkeydown=e=>{if(e.key==='Enter')go()}}
 const PG={
 profile:{hero:1,t:'My Profile',html(){return `<section class="panel hero" id="hero"><div class="hero-txt"><p class="hi">Hi, I'm</p><h1 class="pn">Ammar Ashraf <span class="hd">| 0xWo1vreen</span></h1><div class="rot">Junior Web Penetration Tester</div>
 <h3>About</h3><div class="about"><p>Hi, I'm Ammar Ashraf, an Electronics and Communications Engineering student at Delta University for Science and Technology, passionate about cybersecurity and hardware security.</p><p>I'm a Junior Web Penetration Tester, focused on finding and analyzing web application vulnerabilities. My background also covers networking, Linux, embedded systems, and electronics, and I research hardware and firmware security.</p><p>I also hold a patented invention. My goal is a career in cybersecurity research, specializing in web, hardware, and embedded security.</p></div>
-<h3>Contacts</h3><a class="btn" href="https://www.linkedin.com/in/3mmarashraf/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a class="btn" href="https://www.facebook.com/share/1CM6DVezpF/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Facebook ↗</a><a class="btn cvb" href="Ammar_Ashraf_CV.pdf" download="Ammar_Ashraf_CV.pdf">⬇ Download CV</a></div>
+<h3>Contacts</h3><a class="btn" href="https://www.linkedin.com/in/3mmarashraf/" target="_blank" rel="noopener noreferrer">LinkedIn<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-inline-start:4px"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a class="btn" href="https://www.facebook.com/share/1CM6DVezpF/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Facebook<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-inline-start:4px"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a><a class="btn cvb" href="Ammar_Ashraf_CV.pdf" download="Ammar_Ashraf_CV.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-inline-end:5px"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>Download CV</a></div>
 <div class="hero-img"><i class="wolf wm"></i><img src="${PHOTO}" alt="Ammar Ashraf"></div></section>
 <section class="panel dua pre" id="dua"><div class="orn"><i class="wolf" style="width:100%;height:100%"></i></div>
 <p class="ln b" style="--i:0">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
